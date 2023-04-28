@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  DB:
+    image: mongo:5
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: admin
+    #   MONGO_INITDB_ROOT_PASSWORD: Admin@DB
+    volumes:
+      - DB:/data/db
+    ports:
+      - 27017:27017
+
+  server:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      # target: build
+    command: npx nest start
+    ports:
+      - 3000:3000
+
+volumes:
+  DB:
