@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { Message } from './message.model';
 import { InjectModel } from '@nestjs/mongoose';
-import { RoomService } from 'src/room/room.service';
+import { RoomService } from '../room/room.service';
 import { SendMessageDto } from './dto/send-message.dto';
 
 @Injectable()
